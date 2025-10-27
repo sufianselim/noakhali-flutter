@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:noakhali/responsive/responsive_layout.dart';
 
-import 'login/login_desktop.dart';
-import 'login/login_mobile.dart';
-import 'login/login_tablet.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,10 +17,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ResponsiveLayout(
-        mobileScaffold: const LoginMobile(),
-        tabletScaffold: const LoginTablet(),
-        desktopScaffold: const LoginDesktop(),
+      home: const Home(),
+    );
+  }
+}
+
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Hello, World!'),
       ),
     );
   }
